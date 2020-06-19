@@ -1,0 +1,35 @@
+.banner {
+  background-image: url("https://images.unsplash.com/photo-1560508180-03f285f67ded?ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.cocktail-banner {
+  height: 400px;
+  width: auto;
+  object-fit: contain;
+  background-position: center;
+  margin: 10px auto;
+  position: relative;
+}
+
+.cocktail-banner img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cocktail-banner-text {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+
+    color: white;
+
+  }
+}

@@ -1,13 +1,20 @@
 
-<%= @cocktail.name %>
-
-<%= simple_form_for [ @cocktail , @dose ] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit "Add description" %>
-<% end %>
-
-<% @cocktail.doses.each do |dose| %>
-<%= dose.description %>
-<%= dose.ingredient.name %>
-<% end %>
+<div class="cocktail-banner">
+  <%= image_tag("https://source.unsplash.com/1261x400/?#{@cocktail.name}")  %>
+  <div class="cocktail-banner-text">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+<div class="container">
+  <%= simple_form_for [ @cocktail , @dose ] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit "Add description" %>
+  <% end %>
+</div>
+<div>
+  <% @cocktail.doses.each do |dose| %>
+    <%= dose.description %>
+    <%= dose.ingredient.name %>
+  <% end %>
+</div>

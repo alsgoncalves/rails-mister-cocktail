@@ -1,13 +1,24 @@
 <div class="banner">
-  <h1>Cocktail List</h1>
-  <div class="container d-flex justify-content-center">
-    <% @cocktails.each do |cocktail| %>
-    <div class="card m-3 p-3" style="width: 200px;">
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </div>
-    <% end %>
+  <div class="navbar-lewagon d-flex">
+    <i class="fas fa-cocktail fa-3x"></i>
+    <%= link_to "Add cocktail", new_cocktail_path, class: "btn btn-ghost" %>
   </div>
-  <div>
-    <h4><%= link_to "Add a new cocktail", new_cocktail_path %></h4>
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="col">
+          <div class="card">
+            <div class="card-img-top">
+              <%= image_tag("https://source.unsplash.com/400x400/?#{cocktail.name}") %>
+            </div>
+            <div class="card-body">
+              <%= link_to cocktail.name, cocktail_path(cocktail) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
